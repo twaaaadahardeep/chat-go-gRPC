@@ -1,0 +1,6 @@
+go.mod
+go.sum
+proto/chat_grpc.pb.go
+proto/chat.pb.go
+client/client.exe
+server/server.exe

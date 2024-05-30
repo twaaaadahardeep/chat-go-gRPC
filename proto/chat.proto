@@ -1,0 +1,44 @@
+syntax = "proto3";
+package proto;
+
+option go_package = "github.com/twaaaadahardeep/chat-go-gRPC/proto";
+
+service ChatService {
+    rpc CreateChatRoom (ChatRoom) returns (ChatRoom) {}
+    rpc CreateUser (User) returns (User) {}
+    rpc Chat (stream Message) returns (stream Message) {}
+    rpc GetChatRooms (Empty) returns (stream ChatRoom) {}
+}
+
+message App {
+    repeated ChatRoom chatRooms = 1;
+}
+
+message User {
+    string userId = 1;
+    string userName = 2;
+}
+
+message ChatRoom {
+    string channelId = 1;
+    string channelName = 2;
+    repeated User users = 3;
+    repeated Message messages = 4;
+}
+
+message UserRegister {
+    User user = 1;
+    ChatRoom chatRoom = 2;
+}
+
+message Message {
+    User user = 1;
+    ChatRoom chatRoom = 2;
+    Content content = 3;
+}
+
+message Content {
+    string msg = 1;
+}
+
+message Empty {}
