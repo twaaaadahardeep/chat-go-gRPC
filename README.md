@@ -9,8 +9,23 @@ This is a simple chat application which can be run in the terminal.
 
 ### To run the application
 
+Make sure that you have proto installed to build the .proto file.
+
 1. Clone the repository.
-2. First get the server up by running (windows):
+2. Install the dependencies by running:
+
+```
+go get ./...
+```
+
+3. Build the proto file by running:
+
+```
+cd proto
+protoc --go_out=. --go_opt=paths=source_relative --go-grpc_out=. --go-grpc_opt=paths=source_relative chat.proto
+```
+
+4. First get the server up by running (windows):
 
 ```
 cd server
@@ -18,7 +33,7 @@ go build server.go
 server.exe
 ```
 
-3. Get a couple of clients up by running these commands in separate terminals (windows):
+5. Get a couple of clients up by running these commands in separate terminals (windows):
 
 ```
 cd client
