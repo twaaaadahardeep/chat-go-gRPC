@@ -40,4 +40,4 @@ To close the application, you can press Ctrl + C in the clients first, and then 
 **Note 2 - Multiple users can have same name. But chat room names need to be unique.**
 
 
-### Hope you enjoy this project :) Let me know of you learned something from this project.
+### Hope you enjoy this project :) Let me know if you learned something from this project.
